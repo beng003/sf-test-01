@@ -3,6 +3,25 @@
         "pkief.material-icon-theme",
         "usernamehw.errorlens",
         "christian-kohler.path-intellisense",
-        "kisstkondoros.vscode-gutter-preview"
+        "kisstkondoros.vscode-gutter-preview",
+        "ms-ceintl.vscode-language-pack-zh-hans",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "donjayamanne.python-extension-pack",
+        "xirider.livecode",
+        "wholroyd.jinja",
+        "njpwerner.autodocstring",
+        "batisteo.vscode-django",
+        "mhutchie.git-graph",
+        "visualstudioexptteam.vscodeintellicode",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        "donjayamanne.python-environment-manager",
+        "dongli.python-preview",
+        "tyriar.sort-lines",
+        "kevinrose.vsc-python-indent",
+        "github.copilot-chat",
+        "github.copilot",
+        "ms-toolsai.jupyter"
     ]
 }
