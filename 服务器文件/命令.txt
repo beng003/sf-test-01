@@ -1,0 +1,17 @@
+conda activate sf
+
+# ecm-01:
+ray start --head \
+  --node-ip-address=ecm-01 \
+  --port=6379 \
+  --resources='{"alice": 16}' \
+  --include-dashboard=False \
+  --disable-usage-stats
+
+# ecm-02:
+ ray start --head \
+  --node-ip-address=ecm-02 \
+  --port=6379 \
+  --resources='{"bob": 16}' \
+  --include-dashboard=False \
+  --disable-usage-stats

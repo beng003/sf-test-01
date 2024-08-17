@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "pkief.material-icon-theme",
+        "usernamehw.errorlens",
+        "christian-kohler.path-intellisense",
+        "kisstkondoros.vscode-gutter-preview"
+    ]
+}

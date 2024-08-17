@@ -1,0 +1,14 @@
+1.先运行的脚本不能得到结果
+2.内存不够，使得无法创建聚合器
+3.部分功能只能基于HEU计算
+4.每个参与方那个最后必须执行sf.shutdown()
+5.内存不够问题出在ray节点太多
+
+
+
+
+
+1.FedNdarray、(V/H/Mix)DataFrame、PYUObject、SPUObject之间的关系？https://www.secretflow.org.cn/zh-CN/docs/secretflow/v1.8.0b0/source/secretflow.data.data.horizontal#secretflow.data.horizontal.HDataFrame
+2.两方虚拟出第三发？不可行
+3.横纵混合联邦学习生产模式无法测试？
+4.

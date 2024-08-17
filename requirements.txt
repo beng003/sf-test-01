@@ -1,0 +1,2 @@
+secretflow~=1.8.0b0
+ipython==8.23.0

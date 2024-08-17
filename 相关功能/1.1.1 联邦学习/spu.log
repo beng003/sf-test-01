@@ -1,0 +1,5 @@
+2024-08-02 18:07:25.612 [warning] [channel.h:~Channel:163] Channel destructor is called before WaitLinkTaskFinish, try stop send thread
+2024-08-03 15:35:00.295 [info] [thread_pool.cc:ThreadPool:30] Create a fixed thread pool with size 7
+2024-08-03 15:35:00.301 [info] [thread_pool.cc:ThreadPool:30] Create a fixed thread pool with size 7
+2024-08-03 16:12:08.350 [info] [thread_pool.cc:ThreadPool:30] Create a fixed thread pool with size 7
+2024-08-03 16:12:08.355 [info] [thread_pool.cc:ThreadPool:30] Create a fixed thread pool with size 7
