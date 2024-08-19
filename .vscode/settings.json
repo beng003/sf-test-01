@@ -1,5 +1,37 @@
 {
     "python.analysis.extraPaths": [
         "./utils"
+    ],
+    "cSpell.language": "en",
+    "cSpell.words": [
+        "aggr",
+        "aucpr",
+        "bylevel",
+        "bytree",
+        "cleartext",
+        "colsample",
+        "dtest",
+        "dtrain",
+        "evals",
+        "fillna",
+        "iloc",
+        "logloss",
+        "merror",
+        "minimux",
+        "mlogloss",
+        "Ndarray",
+        "PHEU",
+        "pymysql",
+        "rmsle",
+        "secretflow",
+        "setosa",
+        "softmax",
+        "softprob",
+        "squarederror",
+        "virginica",
+        "watchlist",
+        "xgb's",
+        "xgboost",
+        "yhat"
     ]
 }

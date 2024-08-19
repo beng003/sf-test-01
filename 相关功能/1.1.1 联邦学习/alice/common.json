@@ -1,1 +1,0 @@
-{"base": 0.0, "objective": "logistic", "partition_column_counts": {"alice": 15, "bob": 15}, "tree_num": 3}

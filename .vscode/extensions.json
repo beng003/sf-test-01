@@ -22,6 +22,14 @@
         "kevinrose.vsc-python-indent",
         "github.copilot-chat",
         "github.copilot",
-        "ms-toolsai.jupyter"
+        "ms-toolsai.jupyter",
+        "streetsidesoftware.code-spell-checker",
+        "zh9528.file-size",
+        "gruntfuggly.todo-tree",
+        "ionutvmi.path-autocomplete",
+        "ms-vscode.hexeditor",
+        "ms-python.black-formatter",
+        "ms-vscode.remote-explorer",
+        "mechatroner.rainbow-csv"
     ]
 }
