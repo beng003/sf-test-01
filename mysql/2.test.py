@@ -52,14 +52,14 @@ if __name__ == "__main__":
     v_alice = alice(connect_to_mysql_and_read_data)()
     v_bob = bob(connect_to_mysql_and_read_data)()
 
-    print(v_alice)
-    print(sf.reveal(v_alice))
+    # print(v_alice)
+    # print(sf.reveal(v_alice))
 
     a = spu_device.psi_df(
         key="uid",
         dfs=[v_alice, v_bob],
         receiver=None,
     )
-    print(a)
+    print(a[0])
 
     sf.shutdown()

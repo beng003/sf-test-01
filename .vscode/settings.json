@@ -2,6 +2,86 @@
     "python.analysis.extraPaths": [
         "./utils"
     ],
+    //todo-tree 标签配置从这里开始  标签兼容大小写字母(很好的功能!!!)
+    "todo-tree.regex.regex": "((%|#|//|/\\*|<!--|^\\s*\\*)\\s*($TAGS)|^\\s*- \\[ \\])", //这是注释的正则匹配
+    "todo-tree.general.tags": [
+        "todo", //添加自定义的标签成员,将在下面实现它们的样式
+        "fixme",
+        "bug",
+        "hack",
+        "note",
+        "XXX",
+        "test",
+        "done",
+    ],
+    "todo-tree.regex.regexCaseSensitive": false, //设置为false允许匹配不考虑大小写
+    "todo-tree.highlights.defaultHighlight": { //如果相应变量没赋值就会使用这里的默认值
+        "foreground": "#000000", //字体颜色
+        "background": "#ffff00", //背景色
+        "icon": "check", //标签样式 check 是一个对号的样式
+        "rulerColour": "#ffff00", //边框颜色
+        "type": "tag", //填充色类型  可在TODO TREE 细节页面找到允许的值 在编辑器中突出显示多少 
+        "iconColour": "#ffff00" //标签颜色
+    },
+    "todo-tree.highlights.customHighlight": {
+        //todo 		未来需要做的功能代码
+        "todo": {
+            "icon": "alert", //标签样式
+            "background": "#c9c552", //背景色
+            "rulerColour": "#c9c552", //外框颜色
+            "iconColour": "#c9c552", //标签颜色
+        },
+        //fixme 代码存在缺陷需要修复
+        "fixme": {
+            "background": "#07a507",
+            "icon": "beaker",
+            "rulerColour": "#07a507",
+            "iconColour": "#07a507",
+        },
+        //bug		必须要修复的BUG  
+        "bug": {
+            "background": "#eb5c5c",
+            "icon": "bug",
+            "rulerColour": "#eb5c5c",
+            "iconColour": "#eb5c5c",
+        },
+        //hack 变通方法 差强人意的解决方案
+        "hack": {
+            "background": "#d65d8e",
+            "icon": "versions",
+            "rulerColour": "#d65d8e",
+            "iconColour": "#d65d8e",
+        },
+        //note     	说明一下
+        "note": {
+            "background": "#f90",
+            "icon": "note",
+            "rulerColour": "#f90",
+            "iconColour": "#f90",
+        },
+        //XXX 代码需要引起警惕
+        "XXX": {
+            "background": "#38b2f4",
+            "icon": "unverified",
+            "rulerColour": "#38b2f4",
+            "iconColour": "#38b2f4",
+        },
+        //test		测试代码
+        "test": {
+            "background": "#df7be6",
+            "icon": "flame",
+            "rulerColour": "#df7be6",
+            "iconColour": "#df7be6",
+        },
+        //done		已完成
+        "done": {
+            "background": "#5eec95",
+            "icon": "check",
+            "rulerColour": "#5eec95",
+            "iconColour": "#5eec95",
+        },
+    },
+    //todo-tree的配置 到这里结束 
     "cSpell.language": "en",
     "cSpell.words": [
         "aggr",
@@ -12,15 +92,20 @@
         "colsample",
         "dtest",
         "dtrain",
+        "ECDH",
         "evals",
         "fillna",
         "iloc",
+        "KKRT",
+        "laddr",
         "logloss",
         "merror",
         "minimux",
         "mlogloss",
         "Ndarray",
         "PHEU",
+        "protocl",
+        "psutil",
         "pymysql",
         "rmsle",
         "secretflow",
@@ -28,6 +113,7 @@
         "softmax",
         "softprob",
         "squarederror",
+        "taskkill",
         "virginica",
         "watchlist",
         "xgb's",
