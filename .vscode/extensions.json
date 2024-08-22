@@ -30,6 +30,7 @@
         "ms-vscode.hexeditor",
         "ms-python.black-formatter",
         "ms-vscode.remote-explorer",
-        "mechatroner.rainbow-csv"
+        "mechatroner.rainbow-csv",
+        "ms-vscode.makefile-tools"
     ]
 }

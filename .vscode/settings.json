@@ -1,7 +1,4 @@
 {
-    "python.analysis.extraPaths": [
-        "./utils"
-    ],
     //todo-tree 标签配置从这里开始  标签兼容大小写字母(很好的功能!!!)
     "todo-tree.regex.regex": "((%|#|//|/\\*|<!--|^\\s*\\*)\\s*($TAGS)|^\\s*- \\[ \\])", //这是注释的正则匹配
     "todo-tree.general.tags": [
@@ -116,6 +113,7 @@
         "softprob",
         "squarederror",
         "taskkill",
+        "typer",
         "virginica",
         "watchlist",
         "xgb's",

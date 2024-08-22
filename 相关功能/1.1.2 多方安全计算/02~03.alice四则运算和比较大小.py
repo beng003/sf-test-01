@@ -70,9 +70,9 @@ link_desc = {
 spu_device = sf.SPU(cluster_def=cluster_def, link_desc=link_desc)
 print("*****************************************************Alice SPU")
 
-alice_data_pyu = alice.load("/mnt/users/beng003/sf-test/data/alice_data.txt")
+alice_data_pyu = alice.load("/mnt/users/beng003/sf-test/data/alice/alice_data.txt")
 alice_data_spu = alice_data_pyu.to(spu_device)
-bob_data_pyu = bob.load("/mnt/users/beng003/sf-test/data/bob_data.txt")
+bob_data_pyu = bob.load("2")
 bob_data_spu = bob_data_pyu.to(spu_device)
 
 
@@ -100,7 +100,7 @@ print("*****************************************************只有Alice得到数
 alice_add_bob_alice_pyu = alice_add_bob_data.to(alice)
 alice.dump(
     alice_add_bob_alice_pyu,
-    "/mnt/users/beng003/sf-test/data/alice_add_bob_data.txt",
+    "/mnt/users/beng003/sf-test/data/alice/alice_add_bob_data.txt",
 )
 
 
