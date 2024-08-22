@@ -11,7 +11,7 @@ BIG_PRIME = 17
 
 def secret_share(x, n):
     """
-        Split tensor x into n pieces.
+    Split tensor x into n pieces.
     """
     rand = [random.choice([1, -1]) * random.random() * BIG_PRIME for _ in range(n - 1)]
     rand.append(-sum(rand))
@@ -30,14 +30,26 @@ def import_from_file(name, path):
 def read_yaml(target):
     # if isinstance(target, str) or isinstance(target, bytes):
     #     return yaml.load(target, Loader=yaml.FullLoader)
-    with open(target, encoding='utf-8') as f:
+    with open(target, encoding="utf-8") as f:
         return yaml.load(f.read(), Loader=yaml.FullLoader)
+
+
+def write_yaml(target, data):
+    """
+    将数据写入到指定的 YAML 文件中。
+
+    参数:
+    - target: 目标文件路径
+    - data: 要写入的数据对象
+    """
+    with open(target, "w", encoding="utf-8") as f:
+        yaml.dump(data, f, allow_unicode=True)
 
 
 def wait_func(func, t=0.2, in_runtime=True):
     """
-        A "wait_func" will repeatly run until it returns True.
-        Notice the return type of func must be bool.
+    A "wait_func" will repeatly run until it returns True.
+    Notice the return type of func must be bool.
     """
 
     def decor(*args, **kwargs):
@@ -48,7 +60,7 @@ def wait_func(func, t=0.2, in_runtime=True):
                     return
                 res = func(*args, **kwargs)
             except Exception as e:
-                log('Exception happend in a wait_func.')
+                log("Exception happend in a wait_func.")
                 log(e)
                 return
             else:
