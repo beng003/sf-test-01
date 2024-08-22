@@ -1,0 +1,8 @@
+parties:
+  alice:
+    address: ecm-01:16307
+    listen_addr: 0.0.0.0:16307
+  bob:
+    address: ecm-02:16307
+    listen_addr: 0.0.0.0:16307
+self_party: alice

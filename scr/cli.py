@@ -1,5 +1,5 @@
 """Console script for sf."""
-import sf
+import scr
 
 import typer
 from rich.console import Console

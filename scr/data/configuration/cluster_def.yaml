@@ -1,0 +1,11 @@
+nodes:
+- address: ecm-01:11666
+  listen_address: 0.0.0.0:11666
+  party: alice
+- address: ecm-02:11666
+  listen_address: 0.0.0.0:11666
+  party: bob
+runtime_config:
+  field: 3
+  protocol: 2
+  sigmoid_mode: 3

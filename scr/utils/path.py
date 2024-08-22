@@ -3,30 +3,45 @@ from pathlib import Path
 
 __all__ = ["PathManager"]
 
-DATA_PATH = Path(os.path.realpath(__file__)).parent.parent.parent / "data"
+# 数据文件存储路径
+DATA_PATH = Path(os.path.realpath(__file__)).parent.parent / "data"
+# 配置文件存储路径
 CONFIG_PATH = DATA_PATH / "configuration"
 ALICE_PATH = DATA_PATH / "alice"
 BOB_PATH = DATA_PATH / "bob"
 CAROL_PATH = DATA_PATH / "carol"
 
+# sf集群配置文件路径
+CLUSTER_CONFIG_PATH = CONFIG_PATH / "cluster_config.yaml"
+# SPU初始化配置文件路径
+CLUSTER_DEF_PATH = CONFIG_PATH / "cluster_def.yaml"
+LINK_DESC_PATH = CONFIG_PATH / "link_desc.yaml"
+# 证书路径
+TLS_PATH = CONFIG_PATH / "tls_config.yaml"
 
 class PathManager:
     def __init__(self):
         """初始化路径管理器，使用一个字典将变量名和路径绑定。"""
         self.paths = {}
         # 添加默认路径
-        self.add_path("DATA_PATH", DATA_PATH)
-        self.add_path("CONFIG_PATH", CONFIG_PATH)
-        self.add_path("ALICE_PATH", ALICE_PATH)
-        self.add_path("BOB_PATH", BOB_PATH)
-        self.add_path("CAROL_PATH", CAROL_PATH)
+        self.add_path("DATA_PATH", DATA_PATH, False)
+        self.add_path("CONFIG_PATH", CONFIG_PATH, False)
+        self.add_path("ALICE_PATH", ALICE_PATH, False)
+        self.add_path("BOB_PATH", BOB_PATH, False)
+        self.add_path("CAROL_PATH", CAROL_PATH, False)
 
-    def add_path(self, var_name, new_path):
+        self.add_path("CLUSTER_CONFIG_PATH", CLUSTER_CONFIG_PATH, False)
+        self.add_path("CLUSTER_DEF_PATH", CLUSTER_DEF_PATH, False)
+        self.add_path("LINK_DESC_PATH", LINK_DESC_PATH, False)
+        self.add_path("TLS_PATH", TLS_PATH, False)
+
+    def add_path(self, var_name, new_path, print_tf = True):
         """添加路径并与变量名绑定，路径将被标准化为Path对象。"""
         path = Path(new_path).resolve()  # 使用 Path 并转换为绝对路径
         if var_name not in self.paths:
             self.paths[var_name] = path
-            print(f"添加路径：{var_name} -> {path}")
+            if print_tf:
+                print(f"添加路径：{var_name} -> {path}")
         else:
             print(f"变量名 '{var_name}' 已存在，绑定的路径为：{self.paths[var_name]}")
 

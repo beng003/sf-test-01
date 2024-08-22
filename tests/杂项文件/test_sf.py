@@ -5,7 +5,7 @@
 import pytest
 
 
-from sf import sf
+from scr import sf
 
 
 @pytest.fixture

@@ -1,0 +1,6 @@
+sf.init 3
+
+pyu x
+
+spu 2
+

@@ -1,0 +1,3 @@
+ca_cert: /mnt/users/beng003/certificate/bob_ca.crt
+cert: /mnt/users/beng003/certificate/alice_server_cert.crt
+key: /mnt/users/beng003/certificate/alice_server_key.key
