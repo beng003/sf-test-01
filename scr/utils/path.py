@@ -5,18 +5,21 @@ __all__ = ["PathManager"]
 
 # 数据文件存储路径
 DATA_PATH = Path(os.path.realpath(__file__)).parent.parent / "data"
-# 配置文件存储路径
-CONFIG_PATH = DATA_PATH / "configuration"
+
+# 数据路径
 ALICE_PATH = DATA_PATH / "alice"
 BOB_PATH = DATA_PATH / "bob"
 CAROL_PATH = DATA_PATH / "carol"
 
-# sf集群配置文件路径
+
+# 配置文件存储路径
+CONFIG_PATH = DATA_PATH / "configuration"
+## sf集群配置文件路径
 CLUSTER_CONFIG_PATH = CONFIG_PATH / "cluster_config.yaml"
-# SPU初始化配置文件路径
+## SPU初始化配置文件路径
 CLUSTER_DEF_PATH = CONFIG_PATH / "cluster_def.yaml"
 LINK_DESC_PATH = CONFIG_PATH / "link_desc.yaml"
-# 证书路径
+## 证书路径
 TLS_PATH = CONFIG_PATH / "tls_config.yaml"
 
 class PathManager:

@@ -1,9 +1,7 @@
 from secretflow.data.core import partition
-from secretflow.data.core.io import read_csv_wrapper
 from typing import Callable, Dict, List, Union
 from secretflow.device import PYU, SPU, Device
 from secretflow.utils.errors import InvalidArgumentError
-from secretflow.utils.random import global_random
 from secretflow.data.vertical.dataframe import VDataFrame
 import pymysql
 import pandas as pd

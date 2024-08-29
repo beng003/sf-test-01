@@ -5,3 +5,4 @@ from .transfer import *
 from .code import *
 from .cli import SimpleCLI
 from .config import *
+from ..preprocessing.preprocess import *
