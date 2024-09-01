@@ -1,6 +1,16 @@
 from secretflow.component.preprocessing.filter.sample import SampleAlgorithmFactory
 from secretflow.data.vertical import VDataFrame
 from secretflow.data.horizontal import HDataFrame
+from secretflow.data.horizontal import HDataFrame
+from secretflow.data.vertical import VDataFrame
+from typing import Union
+import pandas as pd
+from scr.preprocessing import *
+import secretflow as sf
+from secretflow.device import SPUObject
+import numpy as np
+import pandas as pd
+from secretflow.data.split import train_test_split
 
 
 def vdf_sample(
@@ -88,7 +98,10 @@ def vdf_sample(
 
 
 def hdf_sample(
-    input_df: HDataFrame,
+    input_df: Union[
+        HDataFrame,
+        VDataFrame,
+    ],
     total_num: int,
     sample_algorithm: str = "random",
     random_frac: float = 0.8,
@@ -107,3 +120,25 @@ def hdf_sample(
     Creates and returns an instance of a sampling algorithm class based on the specified sampling method.
     """
     raise NotImplementedError()
+
+
+import pandas as pd
+import numpy as np
+
+
+def random_sample(
+    input_df: Union[HDataFrame, VDataFrame],
+    random_frac: float = 0.5,
+    random_random_state: int = 1234,
+    random_replacement: bool = False,
+) -> Union[HDataFrame, VDataFrame]:
+    """
+    不放回随机抽样，每个参与方执行相同操作抽样
+    """
+    return train_test_split(
+        data=input_df,
+        test_size=None,
+        train_size=random_frac,
+        random_state=random_random_state,
+        shuffle=True,
+    )[0]

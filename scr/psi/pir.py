@@ -25,24 +25,31 @@ aggr = SecureAggregator(device=alice, participants=[alice, bob])
 spu = sf.SPU(sf.utils.testing.cluster_def(parties=["alice", "bob"]))
 comp = SPUComparator(spu)
 
-hdf = create_df(data, {
-    alice: 0.3,
-    bob: 0.7
-},
-                axis=0,
-                aggregator=aggr,
-                comparator=comp)
 
-print('MinMaxScaler:\n',
-      sf.reveal(MinMaxScaler(hdf['sepal length (cm)']).partitions[alice].data))
-print(
-    'StandardScaler:\n',
-    sf.reveal(
-        StandardScaler(
-            df=hdf['sepal length (cm)'],
-            with_mean=True,
-            with_std=True,
-            aggregator=aggr,
-        ).partitions[alice].data))
+# todo:隐匿查询封装
+spu.pir_setup(
+    server="alice",
+    input_path=f"/mnt/users/beng003/sf-test/scr/data/alice/alice_psi.csv",
+    key_columns=['uid'],
+    label_columns=[
+        "sepal length (cm)", "sepal width (cm)", "petal length (cm)"
+    ],
+    oprf_key_path=
+    f"/mnt/users/beng003/sf-test/scr/data/configuration/alice_oprf_key.bin",
+    setup_path=f"/mnt/users/beng003/sf-test/scr/data/alice/alice_setup",
+    num_per_query=1,
+    label_max_len=20,
+    bucket_size=1000000,
+)
+
+spu.pir_query(
+    server="alice",
+    client="bob",
+    server_setup_path=f"/mnt/users/beng003/sf-test/scr/data/alice/alice_setup",
+    client_key_columns=["uid"],
+    client_input_path=f"/mnt/users/beng003/sf-test/scr/data/bob/bob_psi.csv",
+    client_output_path=
+    f"/mnt/users/beng003/sf-test/scr/data/bob/bob_pir_result.csv",
+)
 
 sf.shutdown()

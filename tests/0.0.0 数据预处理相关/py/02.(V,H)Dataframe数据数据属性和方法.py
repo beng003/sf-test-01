@@ -69,7 +69,7 @@ print('最小值：', vdf.min())
 print('最大值：', vdf.max())
 print('平均值：', vdf.mean())
 print('是否为空：', vdf.isna())
-
+print('是否为空：', hdf.isna())
 # xxx: HDataFrame raise NotImplementedError(),功能暂未实现
 # todo: 可参考标准化数据实现以下部分功能
 ## quantile(self, q=0.5, axis=0)
